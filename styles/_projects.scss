@@ -1,0 +1,212 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.deployments {
+  padding-block: clamp(5rem, 10vw, 9rem);
+}
+
+.bento {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+
+  @include mq(md) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  &__cell {
+    display: flex;
+
+    @include mq(md) {
+      grid-column: span 6;
+
+      &:first-child {
+        grid-column: span 12;
+      }
+    }
+
+    @include mq(lg) {
+      @each $span in (3, 4, 5, 7) {
+        &--#{$span},
+        &--#{$span}:first-child {
+          grid-column: span $span;
+        }
+      }
+    }
+  }
+}
+
+.dossier {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  border: 1px solid $line-cyan;
+  border-radius: $radius;
+  background: var(--c-surface);
+  transition:
+    border-color 0.6s $ease-out-expo,
+    box-shadow 0.6s $ease-out-expo;
+  will-change: transform, opacity;
+  @include cad-corners;
+
+  &:hover {
+    border-color: var(--c-cyan);
+    box-shadow:
+      0 0 0 1px rgba(0, 229, 255, 0.25),
+      0 24px 60px -24px rgba(48, 94, 255, 0.55);
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.625rem 0.875rem;
+    border-bottom: 1px solid $line-cyan;
+    color: var(--c-muted);
+    @include mono(0.625rem);
+  }
+
+  &__schematic {
+    position: relative;
+    height: 9.5rem;
+    border-bottom: 1px solid $line-cyan;
+    background-color: #0a101d;
+    background-image:
+      linear-gradient(rgba(0, 229, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 229, 255, 0.05) 1px, transparent 1px);
+    background-size: 10px 10px;
+    overflow: hidden;
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.25rem 1.125rem 1.25rem;
+  }
+
+  &__name {
+    margin: 0;
+    font-size: clamp(1.375rem, 1.2vw + 1rem, 1.875rem);
+    text-wrap: balance;
+    @include display;
+    line-height: 1.1;
+  }
+
+  &__sub {
+    margin: 0;
+    color: var(--c-cyan);
+    @include mono(0.6875rem);
+  }
+
+  &__desc {
+    margin: 0;
+    color: var(--c-muted);
+    font-size: 0.9375rem;
+    text-wrap: pretty;
+  }
+
+  &__metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: auto 0 0;
+    padding-top: 0.75rem;
+    border-top: 1px dashed $line-cyan;
+
+    div {
+      flex: 1 1 6.5rem;
+      padding: 0.25rem 0.75rem 0.25rem 0;
+    }
+
+    dt {
+      color: var(--c-muted);
+      @include mono(0.5625rem);
+    }
+
+    dd {
+      margin: 0;
+      color: var(--c-text);
+      @include mono(0.8125rem);
+    }
+  }
+
+  &__stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      padding: 0.125rem 0.4375rem;
+      border: 1px solid rgba(48, 94, 255, 0.45);
+      border-radius: 2px;
+      background: rgba(48, 94, 255, 0.1);
+      color: #b9c8ff;
+      @include mono(0.5625rem);
+    }
+  }
+}
+
+.schematic {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  &__grid {
+    fill: none;
+    stroke: rgba(0, 229, 255, 0.28);
+    stroke-width: 1;
+  }
+
+  &__line {
+    fill: none;
+    stroke: var(--c-cyan);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: filter 0.6s;
+  }
+
+  &__accent {
+    fill: rgba(48, 94, 255, 0.22);
+    stroke: var(--c-blue);
+    stroke-width: 1.5;
+    stroke-linejoin: round;
+  }
+
+  &__hot {
+    fill: none;
+    stroke: var(--c-crimson);
+    stroke-width: 1;
+    stroke-dasharray: 4 4;
+  }
+
+  &__dash {
+    fill: none;
+    stroke: var(--c-cyan);
+    stroke-width: 1.5;
+    stroke-dasharray: 3 5;
+    opacity: 0.8;
+  }
+
+  &__node {
+    fill: var(--c-cyan);
+  }
+
+  &__label {
+    fill: var(--c-muted);
+    font-family: $font-mono;
+    font-size: 7px;
+    letter-spacing: 0.08em;
+  }
+}
+
+.dossier:hover .schematic__line {
+  filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.9));
+}

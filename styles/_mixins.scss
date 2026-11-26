@@ -1,0 +1,57 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'variables' as *;
+
+@mixin mq($bp) {
+  @media (min-width: map.get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+@mixin mono($size: 0.6875rem) {
+  font-family: $font-mono;
+  font-size: $size;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+@mixin display {
+  font-family: $font-display;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+}
+
+@mixin blueprint-grid($line: $line-blue) {
+  background-image:
+    linear-gradient($line 1px, transparent 1px),
+    linear-gradient(90deg, $line 1px, transparent 1px);
+  background-size: $grid-size $grid-size;
+}
+
+// Draws a "+" CAD registration crosshair centred on each corner of the element.
+@mixin cad-corners($color: var(--c-cyan), $arm: 9px) {
+  $half: math.div($arm - 1px, 2);
+
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: math.div($arm, -2);
+    z-index: 2;
+    pointer-events: none;
+    background:
+      linear-gradient($color, $color) 0 #{$half} / #{$arm} 1px,
+      linear-gradient($color, $color) #{$half} 0 / 1px #{$arm},
+      linear-gradient($color, $color) 100% #{$half} / #{$arm} 1px,
+      linear-gradient($color, $color) calc(100% - #{$half}) 0 / 1px #{$arm},
+      linear-gradient($color, $color) 0 calc(100% - #{$half}) / #{$arm} 1px,
+      linear-gradient($color, $color) #{$half} 100% / 1px #{$arm},
+      linear-gradient($color, $color) 100% calc(100% - #{$half}) / #{$arm} 1px,
+      linear-gradient($color, $color) calc(100% - #{$half}) 100% / 1px #{$arm};
+    background-repeat: no-repeat;
+  }
+}

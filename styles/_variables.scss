@@ -1,0 +1,39 @@
+$colors: (
+  'bg': #070b14,
+  'surface': #0d1424,
+  'surface-raised': #121c33,
+  'paper': #ede9e0,
+  'paper-deep': #dfd9cc,
+  'ink': #0d1424,
+  'ink-soft': #46506a,
+  'blue': #305eff,
+  'cyan': #00e5ff,
+  'crimson': #e62e2d,
+  'crimson-deep': #b3201f,
+  'gold': #d4af37,
+  'text': #e6ecf7,
+  'muted': #8f9cba,
+);
+
+$breakpoints: (
+  'sm': 640px,
+  'md': 768px,
+  'hero': 900px,
+  'lg': 1024px,
+  'xl': 1280px,
+);
+
+$line-cyan: rgba(0, 229, 255, 0.2);
+$line-cyan-strong: rgba(0, 229, 255, 0.55);
+$line-blue: rgba(48, 94, 255, 0.08);
+$line-ink: rgba(13, 20, 36, 0.14);
+
+$grid-size: 40px;
+$radius: 4px;
+$header-h: 64px;
+
+$font-display: var(--font-space-grotesk), 'Space Grotesk', system-ui, sans-serif;
+$font-body: var(--font-inter), 'Inter', system-ui, sans-serif;
+$font-mono: var(--font-jetbrains-mono), 'JetBrains Mono', ui-monospace, monospace;
+
+$ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
