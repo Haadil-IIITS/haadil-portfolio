@@ -28,7 +28,7 @@ export const tickerItems = [
 export const callouts = [
   { slot: 'tl', key: 'ROLE', value: 'Full-Stack & AI Systems Engineer' },
   { slot: 'tr', key: 'BASE', value: 'IIIT Sri City • India' },
-  { slot: 'bl', key: 'LEADERSHIP', value: 'GDG & V-Club Organizer' },
+  { slot: 'bl', key: 'LEADERSHIP', value: 'GDG AI/ML Executive Member' },
   { slot: 'br', key: 'STATUS', value: 'Available for Dec 2026 hackathons & roles' },
 ] as const
 
@@ -103,21 +103,6 @@ export const projects: Project[] = [
   },
   {
     id: 'DPL-03',
-    name: 'BP & Diabetes Clinical Monitoring System',
-    subtitle: 'Clinical Records & Monitoring',
-    description:
-      'A monitoring system for blood pressure and diabetes readings, built on MySQL 8.0 with a Java JDBC data layer.',
-    pill: { label: 'Data Systems', tone: 'cyan' },
-    schematic: 'vitals',
-    metrics: [
-      { key: 'Database', value: 'MySQL 8.0' },
-      { key: 'Access', value: 'Java JDBC' },
-    ],
-    stack: ['Java', 'JDBC', 'MySQL 8.0'],
-    span: 5,
-  },
-  {
-    id: 'DPL-04',
     name: 'House Price Prediction System',
     subtitle: 'Advanced ML Regression Pipeline',
     description:
@@ -129,10 +114,10 @@ export const projects: Project[] = [
       { key: 'Transform', value: 'Log' },
     ],
     stack: ['Python', 'Regression', 'k-NN Imputation'],
-    span: 4,
+    span: 7,
   },
   {
-    id: 'DPL-05',
+    id: 'DPL-04',
     name: 'Python Automation Suite',
     subtitle: 'ISS Overhead Notifier & Utilities',
     description: 'An ISS overhead notifier and a set of everyday utilities scripted in Python.',
@@ -140,7 +125,7 @@ export const projects: Project[] = [
     schematic: 'orbit',
     metrics: [{ key: 'Module', value: 'ISS Notifier' }],
     stack: ['Python', 'Automation'],
-    span: 3,
+    span: 5,
   },
 ]
 
@@ -198,11 +183,6 @@ export const roles = [
     org: 'Google Developer Groups (GDG)',
     role: 'Executive Member — AI/ML Domain',
     text: 'Organising Google Cloud Study Jams and running AI/ML sessions for the campus developer community.',
-  },
-  {
-    org: 'V-Club',
-    role: 'Organizer',
-    text: 'Planning and leading technical sessions with 175+ participants.',
   },
 ]
 
