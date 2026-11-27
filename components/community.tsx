@@ -35,7 +35,7 @@ export function Community() {
             <div className="photo-frame__media community__photo">
               <Image
                 src="/images/haadil-speaking.jpg"
-                alt="Sketch of Haadil presenting with a microphone in a blue shirt"
+                alt="Portrait of Haadil Hayath Basha"
                 fill
                 sizes="(min-width: 1024px) 460px, 90vw"
                 data-parallax="5"
@@ -43,7 +43,7 @@ export function Community() {
             </div>
             <figcaption>
               <span>Fig. 02</span>
-              <span>Leading a technical session</span>
+              <span>On campus at IIIT Sri City</span>
             </figcaption>
           </figure>
 
