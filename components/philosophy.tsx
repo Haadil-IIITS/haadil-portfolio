@@ -1,7 +1,6 @@
 import Image from 'next/image'
-import { Trophy } from 'lucide-react'
 import { ScrambleText } from '@/components/scramble-text'
-import { education, principles } from '@/lib/site-data'
+import { credential, education, principles } from '@/lib/site-data'
 
 export function Philosophy() {
   return (
@@ -25,13 +24,14 @@ export function Philosophy() {
               forecast the failure, ship the pipeline.
             </p>
             <p className="philosophy__text" data-reveal>
-              I&apos;m a B.Tech Computer Science student at IIIT Sri City, building deep learning
-              models that predict rather than react — from GRU and TCN networks that forecast
-              driver drowsiness to regression pipelines with k-NN imputation and log transforms.
+              I&apos;m a B.Tech Computer Science student at IIIT Sri City, building ML pipelines
+              that predict rather than react — regression systems with k-NN imputation and log
+              transforms to tame skewed, messy real-world data.
             </p>
             <p className="philosophy__text" data-reveal>
-              Outside the lab I hold a world record, break down software architecture and ML
-              implementations as @codeh, and help run the AI/ML domain at Google Developer Groups.
+              Outside the lab I&apos;m part of a Guinness World Records team achievement, break
+              down software architecture and ML implementations as @codeh, and help run the AI/ML
+              domain at Google Developer Groups.
             </p>
 
             <ol className="principles" data-reveal-group>
@@ -62,12 +62,13 @@ export function Philosophy() {
             </figure>
 
             <div className="record-badge" data-reveal>
-              <span className="record-badge__icon" aria-hidden="true">
-                <Trophy />
-              </span>
+              <div className="record-badge__photo">
+                <Image src={credential.image} alt={credential.alt} width={96} height={133} />
+              </div>
               <div>
-                <p className="record-badge__label">Milestone badge</p>
-                <p className="record-badge__title">World Record Holder</p>
+                <p className="record-badge__label">{credential.label}</p>
+                <p className="record-badge__title">{credential.title}</p>
+                <p className="record-badge__meta">{credential.meta}</p>
               </div>
             </div>
 

@@ -87,22 +87,6 @@ export const projects: Project[] = [
   },
   {
     id: 'DPL-02',
-    name: 'DrowsyAhead',
-    subtitle: 'Real-Time Driver Drowsiness Prediction',
-    description:
-      'MediaPipe facial landmarks feed GRU and TCN sequence models that forecast driver fatigue ahead of time, served through FastAPI with a Streamlit dashboard.',
-    pill: { label: 'Research', tone: 'gold' },
-    schematic: 'signal',
-    metrics: [
-      { key: 'Models', value: 'GRU + TCN' },
-      { key: 'Vision', value: 'MediaPipe' },
-      { key: 'Mode', value: 'Real-time' },
-    ],
-    stack: ['Python', 'GRU / TCN', 'MediaPipe', 'FastAPI', 'Streamlit'],
-    span: 5,
-  },
-  {
-    id: 'DPL-03',
     name: 'House Price Prediction System',
     subtitle: 'Advanced ML Regression Pipeline',
     description:
@@ -117,7 +101,7 @@ export const projects: Project[] = [
     span: 7,
   },
   {
-    id: 'DPL-04',
+    id: 'DPL-03',
     name: 'Python Automation Suite',
     subtitle: 'ISS Overhead Notifier & Utilities',
     description: 'An ISS overhead notifier and a set of everyday utilities scripted in Python.',
@@ -187,3 +171,11 @@ export const roles = [
 ]
 
 export const creatorTopics = ['Software architecture', 'ML implementations', 'Backend logic']
+
+export const credential = {
+  label: 'Guinness World Records',
+  title: 'Verified Record Participant',
+  meta: 'Largest picture mosaic formed by people — 4,500 participants, Jeddah, 14 Nov 2017',
+  image: '/images/guinness-certificate.jpg',
+  alt: 'Guinness World Records Certificate of Participation issued to Haadil Hayath Basha for contributing to the record for the largest picture mosaic formed by people',
+}
